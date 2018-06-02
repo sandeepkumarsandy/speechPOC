@@ -1,0 +1,167 @@
+<div class="container-fluid extra-space">
+  <div class="row">
+  <div class="col-md-8">
+<h1 class="page-title">DHWORKS - Decent Homes Works (Countrywide)</h1>
+  </div>
+    
+  <div class="col-md-4">
+  <div class="dropdown float-right">
+<button type="button" class="btn btn-dd dropdown-toggle " data-toggle="dropdown">
+  Contract details
+</button>
+<div class="dropdown-menu">
+  <a class="dropdown-item" href="#">Priorities</a>
+  <a class="dropdown-item" href="#">Schedule of rates</a>
+<a class="dropdown-item" href="#">Contractors</a>
+<a class="dropdown-item" href="#">Job costing</a>
+<a class="dropdown-item" href="#">Auto PI value bands</a>
+</div>
+
+</div>
+  </div>
+  </div>
+  
+</div>
+
+<div class="container-fluid extra-space2">
+
+  <div class="panel-group" >
+        <div id="accordion" class="checkout">
+                      <div class="panel checkout-step">
+                          <div>
+                              <h4 class="checkout-step-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" >Contract details</a></h4>
+                          </div>
+<div id="collapseOne" class="collapse in show">
+  <div class="checkout-step-body ml-6n mr-6n">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="checkout-login">
+          <form>
+
+              
+          <div class="row">
+            
+            <div class="col-md-5">
+              <div class="form-group">
+              <label for="simple-input0">Contract *</label>
+                <input type="text" class="form-control"  [(ngModel)]="name1">
+              
+              </div>
+            <div class="form-group">
+              <label for="simple-input1">Description *</label>
+              <input type="text" class="form-control"   [(ngModel)]="name1">
+              </div>
+              <div class="form-group">
+              <label for="simple-input2">Default question set</label>
+              <select class="form-control" id="sel1">
+                 <option></option>
+                <option>CONS-Responsive repairs and planned maintenance</option>
+                <option>CONS-Responsive repairs and planned maintenance</option>
+                <option>CONS-Responsive repairs and planned maintenance</option>
+                <option>CONS-Responsive repairs and planned maintenance</option>
+              </select>
+              </div>
+              <div class="form-group">
+              <label for="simple-input3">Invoice type *</label>
+              <select class="form-control" id="sel1">
+                 <option></option>
+                <option>One invoice one job</option>
+                <option>One invoice many job</option>
+                <option>One invoice one job</option>
+                <option>One invoice many job</option>
+              </select>
+              </div>
+              
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="form-check form-check-inline">
+<label class="form-check-label">
+  <input type="checkbox" class="form-check-input" value="">Planned maintenance
+</label>
+</div>
+                
+                </div>
+                  <div class="col-md-6 ">
+                
+                    <div class="form-check form-check-inline">
+<label class="form-check-label">
+  <input type="checkbox" class="form-check-input" value="">Job completed
+</label>
+</div>
+                    
+                    </div>
+                </div>
+             
+                </div>
+              
+          
+              
+                </div>
+            
+            <div class="col-md-2"></div>
+            
+            <div class="col-md-5">
+            
+              
+              <div class="form-group">
+              <label for="simple-input3">Client</label>
+              <input type="text" class="form-control" placeholder="HSG" disabled  >
+              </div>
+              
+              <div class="form-group">
+              
+                <label for="simple-input4">Start date</label>
+            <input id="startDate"  />
+
+           </div>
+              
+                <div class="form-group">
+              
+                <label for="simple-input4">End date</label>
+            <input id="endDate"  />
+  <script>
+      var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+      $('#startDate').datepicker({
+          uiLibrary: 'bootstrap4',
+          iconsLibrary: 'fontawesome',
+          minDate: today,
+          maxDate: function () {
+              return $('#endDate').val();
+          }
+      });
+      $('#endDate').datepicker({
+          uiLibrary: 'bootstrap4',
+          iconsLibrary: 'fontawesome',
+          minDate: function () {
+              return $('#startDate').val();
+          }
+      });
+  </script>
+                  
+            
+              </div>
+                
+                  <div class="form-group">
+                 <label for="icon-right">Location</label>
+         <div role="wrapper" class=" gj-unselectable input-group"><input id="endDate" class="form-control" role="input" (click)="locationSearch()" [(ngModel)]="location">
+     <span style="cursor: pointer;" class="input-group-append" role="right-icon"><span class="input-group-text"><a href="location-search.html"><i class="fa fa-search" aria-hidden="true" style="color: #495057;"></i></a></span></span>
+                    </div>
+                    </div>
+
+
+<form >
+  First name:<br>
+  <input type="text" name="firstname" [(ngModel)]="name1">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" [(ngModel)]="name2">
+  <br>
+  Location search:<br>
+  <input type="text" name="location" (click)="locationSearch()" [(ngModel)]="location">
+</form>
+<br><br>
+  <input type="submit" value="Submit" (click)="formSubmit()">
+  <br><br>
+<div (click)="startListening();">start listen</div>
+<div (click)="stopListening();">stop listen</div>
